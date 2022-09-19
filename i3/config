@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -35,7 +35,7 @@ font pango:monospace 8
 # exec --no-startup-id nm-applet
 
 # Start picom
-exec --no-startup-id picom
+exec --no-startup-id picom --experimental-backends
 
 # Start polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -65,10 +65,10 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -77,10 +77,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -89,7 +89,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+semicolon split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -166,10 +166,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -185,7 +185,26 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-default_border pixel 1
-default_floating_border pixel 1
+# default_border normal 1
+# default_floating_border normal 1
 
-gaps inner 5
+for_window [class="^.*"] border pixel 3
+
+# Color variables
+set $unfocused_border #1D1F21
+set $focused_border #7FFFD4
+
+# class                 border  backgr. text    indicator child_border
+client.focused          $focused_border $focused_border #ffffff $focused_border   $focused_border
+client.focused_inactive #ffffff #ffffff #ffffff #5f676a   #5f676a
+client.unfocused        #ffffff #ffffff #ffffff #ffffff   $unfocused_border
+client.urgent           #ffffff #ffffff #ffffff #ffffff   $focused_border
+client.placeholder      #ffffff #ffffff #ffffff #ffffff   #ffffff
+
+client.background       #ffffff
+
+gaps inner 10
+
+# client.focuesd  #7FFFD4
+
+focus_follows_mouse no
