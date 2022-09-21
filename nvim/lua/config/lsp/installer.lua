@@ -12,11 +12,11 @@ function M.setup(servers, options)
         local opts = vim.tbl_deep_extend("force", options, servers[server.name] or {})
 
 				-- For coq.nvim
-				local coq = require "coq"
-				server:setup(coq.lsp_ensure_capabilities(opts))
+				-- local coq = require "coq"
+				-- server:setup(coq.lsp_ensure_capabilities(opts))
 
 				-- For nvim-cmp
-				-- server:setup(opts)
+				server:setup(opts)
 
       end)
 

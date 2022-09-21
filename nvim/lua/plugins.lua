@@ -91,8 +91,8 @@ function M.setup()
     -- Auto pairs
     use {
       "windwp/nvim-autopairs",
-      wants = "nvim-treesitter",
-      -- module = { "nvim-autopairs.completion.cmp", "nvim-autopairs" },
+      -- wants = "nvim-treesitter",
+      module = { "nvim-autopairs.completion.cmp", "nvim-autopairs" },
       config = function()
         require("config.autopairs").setup()
       end,
@@ -103,8 +103,8 @@ function M.setup()
 			"neovim/nvim-lspconfig",
 			opt = true,
 			event = "BufRead",
-			-- wants = { "nvim-lsp-installer", "lsp_signature.nvim", "cmp-nvim-lsp" },  -- for nvim-cmp
-			wants = { "nvim-lsp-installer", "lsp_signature.nvim", "coq_nvim" },  -- for coq.nvim
+			wants = { "nvim-lsp-installer", "lsp_signature.nvim", "cmp-nvim-lsp" },  -- for nvim-cmp
+			-- wants = { "nvim-lsp-installer", "lsp_signature.nvim", "coq_nvim" },  -- for coq.nvim
 			config = function()
 				require("config.lsp").setup()
 			end,
@@ -128,7 +128,7 @@ function M.setup()
         { "ms-jpq/coq.artifacts", branch = "artifacts" },
         { "ms-jpq/coq.thirdparty", branch = "3p", module = "coq_3p" },
       },
-      disable = false,
+      disable = true,
     }
 
 		-- nvim-cmp
@@ -145,7 +145,7 @@ function M.setup()
 				"hrsh7th/cmp-path",
 				"hrsh7th/cmp-nvim-lua",
 				"ray-x/cmp-treesitter",
-				"hrsh7th/cmp-cmdline",
+				-- "hrsh7th/cmp-cmdline",
 				"saadparwaiz1/cmp_luasnip",
 				"hrsh7th/cmp-nvim-lsp",
 				{
@@ -157,7 +157,7 @@ function M.setup()
 				},
 				"rafamadriz/friendly-snippets",
 			},
-			disable = true,
+			disable = false,
 		}
 
     -- Better icons
