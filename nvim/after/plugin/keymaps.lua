@@ -40,3 +40,7 @@ keymap("n", "<Down>", ":resize +1<CR>", default_opts)
 
 -- Toggle nvim-tree
 keymap("n", "<leader>n", ":NvimTreeToggle<CR>", default_opts)
+
+-- Open/close diffview
+keymap("n", "<leader>o", ":DiffviewOpen<CR>", default_opts)
+keymap("n", "<leader>c", ":DiffviewClose<CR>", default_opts)
