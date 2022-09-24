@@ -79,6 +79,14 @@ function M.setup()
       },
     }
 
+		-- git
+		use {
+			"sindrets/diffview.nvim",
+			requires = {
+				"nvim-lua/plenary.nvim",
+			},
+		}
+
 		-- Rainbow brackets 
 		use {
 			'p00f/nvim-ts-rainbow',
@@ -97,6 +105,17 @@ function M.setup()
         require("config.autopairs").setup()
       end,
     }
+
+	-- Auto tags
+	use {
+		"windwp/nvim-ts-autotag",
+		wants = "nvim-treesitter",
+		event = "InsertEnter",
+		config = function()
+			-- require("nvim-ts-autotag").setup { enable = true }
+			require("nvim-ts-autotag").setup()
+		end,
+	}
 
 	-- LSP
 		use {
