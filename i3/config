@@ -53,8 +53,13 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec kitty
 
+# control lighting
+bindsym $mod+u exec --no-startup-id openrgb --color FFE6A7
+bindsym $mod+i exec --no-startup-id openrgb --color C28531
+bindsym $mod+o exec --no-startup-id openrgb --color 000000
+
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start rofi (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun
