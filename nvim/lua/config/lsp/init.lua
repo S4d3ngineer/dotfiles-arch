@@ -2,6 +2,7 @@ local M = {}
 
 local servers = {
   html = {},
+	cssls = {},
   jsonls = {},
   pyright = {},
   rust_analyzer = {},
