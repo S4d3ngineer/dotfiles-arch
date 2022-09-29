@@ -58,10 +58,16 @@ bindsym $mod+u exec --no-startup-id openrgb --color FFE6A7
 bindsym $mod+i exec --no-startup-id openrgb --color C28531
 bindsym $mod+o exec --no-startup-id openrgb --color 000000
 
+# control spotify
+bindsym $mod+comma exec --no-startup-id playerctl --player=spotify previous
+bindsym $mod+period exec --no-startup-id playerctl --player=spotify next
+bindsym $mod+slash exec --no-startup-id playerctl --player=spotify play-pause
+
 # kill focused window
 bindsym $mod+q kill
 
 # start rofi (a program launcher)
+bindsym $mod+p exec --no-startup-id ~/.config/rofi/launchers/type-4/launcher.sh
 bindsym $mod+d exec --no-startup-id rofi -show drun
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
@@ -193,7 +199,7 @@ bindsym $mod+r mode "resize"
 # default_border normal 1
 # default_floating_border normal 1
 
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 1
 
 # Color variables
 set $unfocused_border #1D1F21
