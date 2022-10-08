@@ -24,7 +24,7 @@ function M.setup()
       },
     },
 
-    indent = { enable = true },
+    indent = { enable = false },
 
     -- vim-matchup
     matchup = {
