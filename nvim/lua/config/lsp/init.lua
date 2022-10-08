@@ -4,10 +4,12 @@ local servers = {
   html = {},
 	cssls = {},
   jsonls = {},
+	graphql = {},
   pyright = {},
   rust_analyzer = {},
   sumneko_lua = {},
   tsserver = {},
+	angularls = {},
 }
 
 local lsp_signature = require "lsp_signature"
@@ -16,6 +18,7 @@ lsp_signature.setup {
   handler_opts = {
     border = "rounded",
   },
+	toggle_key = "jl"
 }
 
 local function on_attach(client, bufnr)
