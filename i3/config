@@ -58,6 +58,9 @@ bindsym $mod+u exec --no-startup-id openrgb --color FFE6A7
 bindsym $mod+i exec --no-startup-id openrgb --color C28531
 bindsym $mod+o exec --no-startup-id openrgb --color 000000
 
+# start flameshot GUI
+bindsym $mod+g exec --no-startup-id flameshot gui
+
 # control spotify
 bindsym $mod+comma exec --no-startup-id playerctl --player=spotify previous
 bindsym $mod+period exec --no-startup-id playerctl --player=spotify next
