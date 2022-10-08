@@ -2,14 +2,14 @@ local M = {}
 
 local servers = {
   html = {},
-	cssls = {},
+  cssls = {},
   jsonls = {},
-	graphql = {},
+  graphql = {},
   pyright = {},
   rust_analyzer = {},
   sumneko_lua = {},
   tsserver = {},
-	angularls = {},
+  angularls = {},
 }
 
 local lsp_signature = require "lsp_signature"
@@ -18,7 +18,7 @@ lsp_signature.setup {
   handler_opts = {
     border = "rounded",
   },
-	toggle_key = "jl"
+  toggle_key = "jl"
 }
 
 local function on_attach(client, bufnr)
@@ -38,7 +38,7 @@ local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protoco
 
 local opts = {
   on_attach = on_attach,
-	capabilities = capabilities,
+  capabilities = capabilities,
   flags = {
     debounce_text_changes = 150,
   },

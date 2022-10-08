@@ -11,26 +11,26 @@ function M.setup(servers, options)
       server:on_ready(function()
         local opts = vim.tbl_deep_extend("force", options, servers[server.name] or {})
 
-				if server_name == "graphql" then
-					require'lspconfig'.graphql.setup{
-						filetypes = {
-							"graphql",
-							"typescriptreact",
-							"typescript",
-							"typescript.jsx",
-							"javascriptreact",
-							"javascript",
-							"javascript.jsx",
-						}
-					}
-				end
+        if server_name == "graphql" then
+          require 'lspconfig'.graphql.setup {
+            filetypes = {
+              "graphql",
+              "typescriptreact",
+              "typescript",
+              "typescript.jsx",
+              "javascriptreact",
+              "javascript",
+              "javascript.jsx",
+            }
+          }
+        end
 
-				-- For coq.nvim
-				-- local coq = require "coq"
-				-- server:setup(coq.lsp_ensure_capabilities(opts))
+        -- For coq.nvim
+        -- local coq = require "coq"
+        -- server:setup(coq.lsp_ensure_capabilities(opts))
 
-				-- For nvim-cmp
-				server:setup(opts)
+        -- For nvim-cmp
+        server:setup(opts)
 
       end)
 
