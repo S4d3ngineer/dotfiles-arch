@@ -7,7 +7,7 @@ function M.setup()
 
     -- Install languages synchronously (only applied to `ensure_installed`)
     sync_install = false,
-		auto_install = true,
+    auto_install = true,
 
     highlight = {
       -- `false` will disable the whole extension
@@ -81,7 +81,7 @@ function M.setup()
 
       lsp_interop = {
         enable = true,
-        border = "none",
+        border = "round",
         peek_definition_code = {
           ["<leader>df"] = "@function.outer",
           ["<leader>dF"] = "@class.outer",
@@ -89,14 +89,14 @@ function M.setup()
       },
     },
 
-		 rainbow = {
-			enable = true,
-			-- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-			extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-			max_file_lines = nil, -- Do not enable for files with more than n lines, int
-			-- colors = {}, -- table of hex strings
-			-- termcolors = {} -- table of colour name strings
-		},
+    rainbow = {
+      enable = true,
+      -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+      extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+      max_file_lines = nil, -- Do not enable for files with more than n lines, int
+      -- colors = {}, -- table of hex strings
+      -- termcolors = {} -- table of colour name strings
+    },
   }
 end
 
