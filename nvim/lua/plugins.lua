@@ -64,13 +64,22 @@ function M.setup()
       }
     }
 
-    -- Buffer line
+    -- Bufferline
     use {
       "akinsho/nvim-bufferline.lua",
       event = "BufReadPre",
       wants = "nvim-web-devicons",
       config = function()
         require("config.bufferline").setup()
+      end,
+    }
+
+    -- Lualine
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+      config = function()
+        require('config.lline').setup()
       end,
     }
 
@@ -82,6 +91,7 @@ function M.setup()
       end,
     }
 
+    -- vim-commentary
     use {
       "tpope/vim-commentary",
     }
@@ -191,11 +201,11 @@ function M.setup()
       requires = {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
-        "hrsh7th/cmp-nvim-lua",
-        "ray-x/cmp-treesitter",
-        -- "hrsh7th/cmp-cmdline",
-        "saadparwaiz1/cmp_luasnip",
+        "hrsh7th/cmp-cmdline",
         "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-nvim-lua",
+        "saadparwaiz1/cmp_luasnip",
+        "ray-x/cmp-treesitter",
         {
           "L3MON4D3/LuaSnip",
           wants = "friendly-snippets",
