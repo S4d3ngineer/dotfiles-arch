@@ -21,6 +21,30 @@ opt.updatetime = 250 --Decrease update time
 opt.signcolumn = "yes" -- Always show sign column
 opt.clipboard = "unnamedplus" -- Access system clipboard
 
+opt.expandtab = true
+opt.shiftwidth = 2
+opt.softtabstop = 2
+opt.tabstop = 2
+
+api.nvim_set_hl(0, "FloatBorder", { bg = "None" })
+
+vim.diagnostic.config({
+  float = {
+    border = 'rounded',
+    source = 'always'
+  }
+})
+
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+  vim.lsp.handlers.hover,
+  { border = 'rounded' }
+)
+
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+  vim.lsp.handlers.signature_help,
+  { border = 'rounded' }
+)
+
 -- Highlight on yank
 vim.cmd [[
   augroup YankHighlight
