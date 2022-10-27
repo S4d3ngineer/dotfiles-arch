@@ -34,7 +34,7 @@ local function on_attach(client, bufnr)
   require("config.lsp.keymaps").setup(client, bufnr)
 end
 
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local opts = {
   on_attach = on_attach,
