@@ -8,9 +8,9 @@ function M.setup()
       number = true,
       relativenumber = true,
     },
-    filters = {
-      custom = { ".git" },
-    },
+    git = {
+      ignore = false
+    }
   }
 end
 
