@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup()
 	require("catppuccin").setup({
-		transparent_background = true,
+		transparent_background = false,
 		term_colors = true,
 		compile = {
 			enabled = false,

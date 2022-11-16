@@ -14,6 +14,15 @@ function M.setup()
     post_hook = nil, -- Function to run after the scrolling animation ends
     performance_mode = false, -- Disable "Performance Mode" on all buffers.
   })
+
+  local t = {}
+  -- Syntax: t[keys] = {function, {function arguments}}
+  -- Use the "sine" easing function
+  t['<C-u>'] = {'scroll', {'-vim.wo.scroll', 'true', '100', [['quadratic']]}}
+  t['<C-d>'] = {'scroll', { 'vim.wo.scroll', 'true', '100', [['quadratic']]}}
+
+  require('neoscroll.config').set_mappings(t)
+
 end
 
 return M

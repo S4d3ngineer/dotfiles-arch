@@ -26,7 +26,10 @@ opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.tabstop = 2
 
-api.nvim_set_hl(0, "FloatBorder", { bg = "None" })
+-- Required by cmp
+opt.completeopt = {'menu', 'menuone', 'noselect'}
+
+-- api.nvim_set_hl(0, "FloatBorder", { bg = "None" })
 
 vim.diagnostic.config({
   float = {

@@ -25,7 +25,7 @@ function M.setup()
 
     b = {
       name = "Buffer",
-      c = { "<Cmd>bd!<Cr>", "Close current buffer" },
+      c = { "<Cmd>Bdelete<Cr>", "Close current buffer" },
       D = { "<Cmd>%bd|e#|bd#<Cr>", "Delete all buffers" },
     },
 
@@ -40,7 +40,7 @@ function M.setup()
 
     g = {
       name = "Git",
-      s = { "<cmd>Neogit<CR>", "Status" },
+      s = { "<cmd>0G<CR>", "Status" },
     },
   }
 

@@ -20,25 +20,6 @@ function M.setup()
 
   }
 
-  -- Check if packer.nvim is installed
-  -- Run PackerCompile if there are changes in this file
-  local function packer_init()
-    local fn = vim.fn
-    local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-    if fn.empty(fn.glob(install_path)) > 0 then
-      packer_bootstrap = fn.system {
-        "git",
-        "clone",
-        "--depth",
-        "1",
-        "https://github.com/wbthomason/packer.nvim",
-        install_path,
-      }
-      vim.cmd [[packadd packer.nvim]]
-    end
-    vim.cmd "autocmd BufWritePost plugins.lua source <afile> | PackerCompile"
-  end
-
   -- Plugins
   local function plugins(use)
     use { "wbthomason/packer.nvim" }
@@ -92,9 +73,7 @@ function M.setup()
     }
 
     -- vim-commentary
-    use {
-      "tpope/vim-commentary",
-    }
+    use {"tpope/vim-commentary"}
 
     -- Treesitter
     use {
@@ -110,13 +89,32 @@ function M.setup()
       },
     }
 
-    -- git
+    -- git -->
+
     use {
       "sindrets/diffview.nvim",
       requires = {
         "nvim-lua/plenary.nvim",
       },
+      cmd = { "DiffviewOpen" },
     }
+
+    use { "tpope/vim-fugitive" }
+
+    use {
+      'lewis6991/gitsigns.nvim',
+      config = function()
+        require('gitsigns').setup()
+      end
+    }
+
+    -- git <--
+
+    -- Vim repreat
+    use { "tpope/vim-repeat" }
+
+    -- Bbye (deleting buffers without closing windows) 
+    use { "moll/vim-bbye" }
 
     -- Rainbow brackets
     use {
@@ -147,6 +145,17 @@ function M.setup()
         require("nvim-ts-autotag").setup()
       end,
     }
+
+    -- Indent blankline
+    use {
+      "lukas-reineke/indent-blankline.nvim",
+      config = function()
+        require("config.inblank").setup()
+      end,
+    }
+
+    -- Surround vim
+    use { "tpope/vim-surround" }
 
     -- Neoscroll
     use {
@@ -208,10 +217,10 @@ function M.setup()
         "ray-x/cmp-treesitter",
         {
           "L3MON4D3/LuaSnip",
-          wants = "friendly-snippets",
-          config = function()
-            require("config.luasnip").setup()
-          end,
+          -- wants = "friendly-snippets",
+          -- config = function()
+          --   require("config.luasnip").setup()
+          -- end,
         },
         "rafamadriz/friendly-snippets",
       },
@@ -232,15 +241,13 @@ function M.setup()
       "catppuccin/nvim",
       as = "catppuccin",
       config = function()
-        vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+        vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
         require("config.catp").setup()
         vim.cmd [[colorscheme catppuccin]]
       end,
     }
 
   end
-
-  packer_init()
 
   local packer = require "packer"
   packer.init(conf)

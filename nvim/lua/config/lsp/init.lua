@@ -18,6 +18,7 @@ lsp_signature.setup {
   handler_opts = {
     border = "rounded",
   },
+  hint_prefix = "",
   toggle_key = "jl"
 }
 
@@ -45,7 +46,16 @@ local opts = {
 }
 
 function M.setup()
+
+  -- -- Diagnostic symbols in the sign column (gutter)
+  -- local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+  -- for type, icon in pairs(signs) do
+  --   local hl = "DiagnosticSign" .. type
+  --   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+  -- end
+
   require("config.lsp.installer").setup(servers, opts)
+  require('lspconfig.ui.windows').default_options.border = 'single'
 end
 
 return M
