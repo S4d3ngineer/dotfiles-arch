@@ -1,5 +1,4 @@
 local M = {}
-
 function M.setup()
   -- Indicate first time installation
   local packer_bootstrap = false
@@ -45,6 +44,12 @@ function M.setup()
       }
     }
 
+    -- Toggleterm
+    use {
+      "akinsho/toggleterm.nvim", tag = '*', config = function()
+        require("config.tterm").setup()
+      end
+    }
     -- Bufferline
     use {
       "akinsho/nvim-bufferline.lua",
@@ -73,7 +78,7 @@ function M.setup()
     }
 
     -- vim-commentary
-    use {"tpope/vim-commentary"}
+    use { "tpope/vim-commentary" }
 
     -- Treesitter
     use {
@@ -113,7 +118,7 @@ function M.setup()
     -- Vim repreat
     use { "tpope/vim-repeat" }
 
-    -- Bbye (deleting buffers without closing windows) 
+    -- Bbye (deleting buffers without closing windows)
     use { "moll/vim-bbye" }
 
     -- Rainbow brackets
@@ -236,15 +241,29 @@ function M.setup()
       end,
     }
 
+
+    ------------------------- THEMES ------------------------------
+
     -- Catppuccin
+    -- use {
+    --   "catppuccin/nvim",
+    --   as = "catppuccin",
+    --   config = function()
+    --     vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+    --     require("config.catp").setup()
+    --     vim.cmd [[colorscheme catppuccin]]
+    --   end,
+    -- }
+
     use {
-      "catppuccin/nvim",
-      as = "catppuccin",
+      'rose-pine/neovim',
+      as = 'rose-pine',
       config = function()
-        vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
-        require("config.catp").setup()
-        vim.cmd [[colorscheme catppuccin]]
-      end,
+        require('rose-pine').setup({
+          dark_variant = 'moon'
+        })
+        vim.cmd('colorscheme rose-pine')
+      end
     }
 
   end
