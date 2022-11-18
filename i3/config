@@ -35,7 +35,7 @@ font pango:monospace 8
 # exec --no-startup-id nm-applet
 
 # Start picom
-exec --no-startup-id picom --experimental-backends
+# exec --no-startup-id picom --experimental-backends
 
 # Start polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -207,7 +207,7 @@ for_window [class="^.*"] border pixel 1
 
 # Color variables
 set $unfocused_border #1D1F21
-set $focused_border #7FFFD4
+set $focused_border #9ccfd8 
 
 # class                 border  backgr. text    indicator child_border
 client.focused          $focused_border $focused_border #ffffff $focused_border   $focused_border
