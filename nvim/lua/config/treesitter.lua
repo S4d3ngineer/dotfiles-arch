@@ -91,10 +91,16 @@ function M.setup()
 
     rainbow = {
       enable = true,
-      -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+      disable = { "html" }, -- list of languages you want to disable the plugin for
       extended_mode = false, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
       max_file_lines = nil, -- Do not enable for files with more than n lines, int
-      -- colors = {}, -- table of hex strings
+      colors = {
+        "#eb6f92",
+        "#f6c177",
+        "#ea9a97",
+        "#3e8fb0",
+        "#c4a7e7",
+      }, -- table of hex strings
       -- termcolors = {} -- table of colour name strings
     },
   }
