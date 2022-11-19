@@ -154,6 +154,7 @@ function M.setup()
     -- Indent blankline
     use {
       "lukas-reineke/indent-blankline.nvim",
+      after = "nvim-treesitter",
       config = function()
         require("config.inblank").setup()
       end,
