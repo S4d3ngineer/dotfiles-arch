@@ -241,6 +241,14 @@ function M.setup()
       end,
     }
 
+    -- Colorizer
+    use {
+      'norcalli/nvim-colorizer.lua',
+      config = function()
+        require('colorizer').setup()
+      end,
+    }
+
 
     ------------------------- THEMES ------------------------------
 
