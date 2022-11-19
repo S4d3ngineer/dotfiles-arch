@@ -41,12 +41,12 @@ keymap("n", "<Down>", ":resize +1<CR>", default_opts)
 -- Toggle nvim-tree
 keymap("n", "<leader>n", ":NvimTreeToggle<CR>", default_opts)
 
--- Open/close diffview
-keymap("n", "<leader>o", ":DiffviewOpen<CR>", default_opts)
-keymap("n", "<leader>c", ":DiffviewClose<CR>", default_opts)
-
 -- Telescope
 keymap('n', 'ff', "<cmd>Telescope find_files<CR>", default_opts)
 keymap('n', 'fg', "<cmd>Telescope live_grep<CR>", default_opts)
 keymap('n', 'fb', "<cmd>Telescope buffers<CR>", default_opts)
 keymap('n', 'fh', "<cmd>Telescope help_tags<CR>", default_opts)
+
+-- Gitsigns
+keymap('n', ']g', "<cmd>Gitsigns next_hunk<CR>", default_opts)
+keymap('n', '[g', "<cmd>Gitsigns prev_hunk<CR>", default_opts)
