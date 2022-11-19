@@ -25,9 +25,11 @@ function M.setup()
 
     b = {
       name = "Buffer",
-      c = { "<Cmd>Bdelete<Cr>", "Close current buffer" },
-      D = { "<Cmd>%bd|e#|bd#<Cr>", "Delete all buffers" },
+      c = { "<cmd>Bdelete<CR>", "Close current buffer" },
+      D = { "<cmd>%bd|e#|bd#<CR>", "Delete all buffers" },
     },
+
+    t = { "<cmd>tabclose<CR>", "Close current tab" },
 
     z = {
       name = "Packer",
@@ -40,7 +42,27 @@ function M.setup()
 
     g = {
       name = "Git",
-      s = { "<cmd>0G<CR>", "Status" },
+
+      -- Gitsigns hunks
+      p = { "<cmd>Gitsigns preview_hunk<CR>", "Preview hunk" },
+      s = { "<cmd>Gitsigns stage_hunk<CR>", "Stage hunk" },
+      r = { "<cmd>Gitsigns reset_hunk<CR>", "Reset hunk" },
+      u = { "<cmd>Gitsigns undo_stage_hunk<CR>", "Undo stage hunk" },
+      -- Gitsigns buffer
+      S = { "<cmd>Gitsigns stage_buffer<CR>", "Stage buffer" },
+      R = { "<cmd>Gitsings reset_buffer<CR>", "Reset buffer"},
+      U = { "<cmd>Gitsings stage_buffer_index<CR>", "Reset buffer index"},
+
+      -- Fugitive
+      g = { "<cmd>0G<CR>", "Status" },
+      c = { "<cmd>Git commit | startinsert<CR>", "Commit"},
+
+      -- Diffview 
+      d = { "<cmd>DiffviewOpen<CR>", "Open diffview" },
+      h = { "<cmd>DiffviewFileHistory<CR>", "Show file history"},
+      H = { "<cmd>DiffviewFileHistory %<CR>", "Show currenct file history"},
+      f = { "<cmd>DiffviewToggleFiles<CR>", "Toggle files pane in diffview" },
+      F = { "<cmd>DiffviewFocusFiles<CR>", "Focus files pane in diffview"}
     },
   }
 
