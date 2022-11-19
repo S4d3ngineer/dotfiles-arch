@@ -7,7 +7,10 @@ api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
 g.mapleader = " "
 g.maplocalleader = " "
 
-opt.guicursor = ""
+api.nvim_set_hl(0, 'Cursor', { fg = "#333333", bg = "#ffffff" })
+opt.guicursor = {
+  'i:Cursor',
+}
 opt.termguicolors = true -- Enable colors in terminal
 opt.hlsearch = true --Set highlight on search
 opt.number = true --Make line numbers default
