@@ -1,3 +1,6 @@
+`I will be placing my current config inside this repository. Its main purpose is to serve me as backup option and I don't plan, for now, to give detailed instruction on how to achieve setup identical to mine.
+However I decided to attach my Obsidian notes related to my Arch Linux experience so far. The might be pretty rough, but I might update them in the future as my Arch Linux journey continues.`
+
 Arch Linux.md
 
 # Additional notes to help with smoother installation
