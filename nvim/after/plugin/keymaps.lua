@@ -6,6 +6,9 @@ local expr_opts = { noremap = true, expr = true, silent = true }
 keymap("i", "jk", "<ESC>", default_opts)
 keymap("t", "jk", "<C-\\><C-n>", default_opts)
 
+-- File completion
+keymap("i", "jf", "<C-x><C-f>", default_opts)
+
 -- Center search results
 keymap("n", "n", "nzz", default_opts)
 keymap("n", "N", "Nzz", default_opts)
