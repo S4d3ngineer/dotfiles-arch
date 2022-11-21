@@ -37,6 +37,7 @@ function M.setup()
     sources = cmp.config.sources({
       { name = 'path' },
       { name = 'nvim_lsp' },
+      { name = 'nvim_lua' },
       -- { name = 'treesitter' },
       -- { name = 'luasnip', keyword_length = 2 },
       { name = 'buffer', keyword_lenth = 3 }
