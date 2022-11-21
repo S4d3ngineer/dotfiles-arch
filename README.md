@@ -1,5 +1,4 @@
-`I will be placing my current config inside this repository. Its main purpose is to serve me as backup option and I don't plan, for now, to give detailed instruction on how to achieve setup identical to mine.
-However I decided to attach my Obsidian notes related to my Arch Linux experience so far. The might be pretty rough, but I might update them in the future as my Arch Linux journey continues.`
+Arch Linux.md
 
 # Additional notes to help with smoother installation
 One who tries to install Arch linux should read the official Arch wiki content about installation and also about dual boot if one will be installing Arch in such mode with Windows for example. Arch wiki is best source of information and other sources should be only supplementary, because author might made mistake or show some outdated methods in steps of installation guide.
