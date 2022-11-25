@@ -55,6 +55,7 @@ function M.setup()
   -- end
 
   require("config.lsp.installer").setup(servers, opts)
+  require("config.lsp.null-ls").setup(opts)
   require('lspconfig.ui.windows').default_options.border = 'single'
 end
 

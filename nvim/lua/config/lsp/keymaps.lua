@@ -27,6 +27,7 @@ local function keymappings(client, bufnr)
   }
   if client.server_capabilities.documentFormattingProvider then
     keymap_l.l.f = { "<cmd>lua vim.lsp.buf.format({async = true})<CR>", "Format Document" }
+    keymap_l.l.F = { "<cmd>lua vim.lsp.buf.format()<CR>", "Format Document (sync)" }
   end
 
   local keymap_g = {

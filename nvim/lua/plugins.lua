@@ -40,8 +40,11 @@ function M.setup()
       requires = {
         'nvim-lua/plenary.nvim',
         'nvim-treesitter/nvim-treesitter',
-        'BurntSushi/ripgrep'
-      }
+        'BurntSushi/ripgrep',
+      },
+      config = function()
+        require('config.telescope').setup()
+      end,
     }
 
     -- Toggleterm
@@ -101,7 +104,7 @@ function M.setup()
       requires = {
         "nvim-lua/plenary.nvim",
       },
-      cmd = { "DiffviewOpen" },
+      cmd = { "DiffviewOpen", "DiffviewFileHistory" },
     }
 
     use { "tpope/vim-fugitive" }
@@ -176,7 +179,7 @@ function M.setup()
       "neovim/nvim-lspconfig",
       opt = true,
       event = "BufRead",
-      wants = { "nvim-lsp-installer", "lsp_signature.nvim", "cmp-nvim-lsp" }, -- for nvim-cmp
+      wants = { "nvim-lsp-installer", "lsp_signature.nvim", "cmp-nvim-lsp", "null-ls.nvim" }, -- for nvim-cmp
       -- wants = { "nvim-lsp-installer", "lsp_signature.nvim", "coq_nvim" },  -- for coq.nvim
       config = function()
         require("config.lsp").setup()
@@ -184,8 +187,15 @@ function M.setup()
       requires = {
         "williamboman/nvim-lsp-installer",
         "ray-x/lsp_signature.nvim",
+        "jose-elias-alvarez/null-ls.nvim",
       },
     }
+    -- use {
+    --   "jose-elias-alvarez/null-ls.nvim",
+    --   config = function ()
+    --     require("config.lsp.null-ls")
+    --   end
+    -- }
 
     -- coq
     use {
