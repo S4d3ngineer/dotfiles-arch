@@ -8,6 +8,7 @@ function M.setup(opts)
 
   null_ls.setup({
     sources = {
+      formatting.rustfmt,
       formatting.prettierd,
       diagnostics.eslint,
     },
