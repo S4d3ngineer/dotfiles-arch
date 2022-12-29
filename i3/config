@@ -35,7 +35,7 @@ font pango:monospace 8
 # exec --no-startup-id nm-applet
 
 # Start picom
-# exec --no-startup-id picom --experimental-backends
+exec --no-startup-id picom -b
 
 # Start polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -55,9 +55,9 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty
 
 # control lighting
-bindsym $mod+u exec --no-startup-id openrgb --color FFE6A7
-bindsym $mod+i exec --no-startup-id openrgb --color C28531
-bindsym $mod+o exec --no-startup-id openrgb --color 000000
+bindsym $mod+u exec --no-startup-id openrgb -d 1 --color FFE6A7
+bindsym $mod+i exec --no-startup-id openrgb -d 1 --color C28531
+bindsym $mod+o exec --no-startup-id openrgb -d 1 --color 000000
 
 # start flameshot GUI
 bindsym $mod+g exec --no-startup-id flameshot gui
@@ -204,6 +204,7 @@ bindsym $mod+r mode "resize"
 # default_floating_border normal 1
 
 for_window [class="^.*"] border pixel 1
+hide_edge_borders smart
 
 # Color variables
 set $unfocused_border #1D1F21
@@ -219,6 +220,7 @@ client.placeholder      #ffffff #ffffff #ffffff #ffffff   #ffffff
 client.background       #ffffff
 
 gaps inner 10
+smart_gaps on
 
 # client.focuesd  #7FFFD4
 
