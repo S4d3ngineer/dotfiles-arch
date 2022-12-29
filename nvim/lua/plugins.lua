@@ -23,6 +23,8 @@ function M.setup()
   local function plugins(use)
     use { "wbthomason/packer.nvim" }
 
+    -- no neck pain
+    use { "shortcuts/no-neck-pain.nvim", tag = "*" }
     -- nvim-tree
     use {
       "kyazdani42/nvim-tree.lua",
@@ -80,9 +82,6 @@ function M.setup()
       end,
     }
 
-    -- vim-commentary
-    use { "tpope/vim-commentary" }
-
     -- Treesitter
     use {
       "nvim-treesitter/nvim-treesitter",
@@ -95,6 +94,23 @@ function M.setup()
       requires = {
         { "nvim-treesitter/nvim-treesitter-textobjects" },
       },
+    }
+
+    use {
+      'JoosepAlviste/nvim-ts-context-commentstring',
+      after = "nvim-treesitter",
+      config = function()
+        require("config.treesitter").setup()
+      end,
+    }
+
+    -- Commenting
+    use {
+      'numToStr/Comment.nvim',
+      after = "nvim-ts-context-commentstring",
+      config = function()
+        require('config.comment').setup()
+      end
     }
 
     -- git -->
@@ -180,7 +196,6 @@ function M.setup()
       opt = true,
       event = "BufRead",
       wants = { "nvim-lsp-installer", "lsp_signature.nvim", "cmp-nvim-lsp", "null-ls.nvim" }, -- for nvim-cmp
-      -- wants = { "nvim-lsp-installer", "lsp_signature.nvim", "coq_nvim" },  -- for coq.nvim
       config = function()
         require("config.lsp").setup()
       end,
@@ -190,12 +205,6 @@ function M.setup()
         "jose-elias-alvarez/null-ls.nvim",
       },
     }
-    -- use {
-    --   "jose-elias-alvarez/null-ls.nvim",
-    --   config = function ()
-    --     require("config.lsp.null-ls")
-    --   end
-    -- }
 
     -- coq
     use {
@@ -229,6 +238,7 @@ function M.setup()
         "hrsh7th/cmp-cmdline",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-nvim-lua",
+        "hrsh7th/cmp-nvim-lsp-signature-help",
         "saadparwaiz1/cmp_luasnip",
         "ray-x/cmp-treesitter",
         {
@@ -252,15 +262,6 @@ function M.setup()
       end,
     }
 
-    -- Colorizer
-    use {
-      'norcalli/nvim-colorizer.lua',
-      config = function()
-        require('colorizer').setup()
-      end,
-    }
-
-
     ------------------------- THEMES ------------------------------
 
     -- Catppuccin
@@ -279,7 +280,8 @@ function M.setup()
       as = 'rose-pine',
       config = function()
         require('rose-pine').setup({
-          dark_variant = 'moon'
+          dark_variant = 'moon',
+          disable_float_background = true,
         })
         vim.cmd('colorscheme rose-pine')
       end

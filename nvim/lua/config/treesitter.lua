@@ -89,6 +89,39 @@ function M.setup()
       },
     },
 
+    context_commentstring = {
+      enable = true,
+      enable_autocmd = false,
+      config = {
+        -- Languages that have a single comment style
+        javascript = {
+          __default = '// %s',
+          jsx_element = '{/* %s */}',
+          jsx_fragment = '{/* %s */}',
+          jsx_attribute = '// %s',
+          comment = '// %s'
+        },
+        typescript = { __default = '// %s', __multiline = '/* %s */' },
+        tsx = {
+          __default = '// %s',
+          __multiline = '/* %s */',
+          jsx_element = '{/* %s */}',
+          jsx_fragment = '{/* %s */}',
+          jsx_attribute = { __default = '// %s', __multiline = '/* %s */' },
+          comment = { __default = '// %s', __multiline = '/* %s */' },
+          call_expression = { __default = '// %s', __multiline = '/* %s */' },
+          statement_block = { __default = '// %s', __multiline = '/* %s */' },
+          spread_element = { __default = '// %s', __multiline = '/* %s */' },
+        },
+        css = "/* %s */",
+        scss = "/* %s */",
+        html = "<!-- %s -->",
+        svelte = "<!-- %s -->",
+        vue = "<!-- %s -->",
+        json = "",
+      },
+    },
+
     rainbow = {
       enable = true,
       disable = { "html" }, -- list of languages you want to disable the plugin for

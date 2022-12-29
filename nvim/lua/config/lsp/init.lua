@@ -13,15 +13,15 @@ local servers = {
   emmet_ls = {},
 }
 
-local lsp_signature = require "lsp_signature"
-lsp_signature.setup = {
-  bind = true,
-  handler_opts = {
-    border = "rounded",
-  },
-  hint_prefix = "",
-  toggle_key = "jl"
-}
+-- local lsp_signature = require "lsp_signature"
+-- lsp_signature.setup = {
+--   bind = true,
+--   handler_opts = {
+--     border = "rounded",
+--   },
+--   hint_prefix = "",
+--   toggle_key = "jl"
+-- }
 
 local function on_attach(client, bufnr)
   -- Enable completion triggered by <C-X><C-O>
