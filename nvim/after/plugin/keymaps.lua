@@ -53,3 +53,6 @@ keymap('n', 'fh', "<cmd>Telescope help_tags<CR>", default_opts)
 -- Gitsigns
 keymap('n', ']g', "<cmd>Gitsigns next_hunk<CR>", default_opts)
 keymap('n', '[g', "<cmd>Gitsigns prev_hunk<CR>", default_opts)
+
+-- Disable <C-z>
+keymap('n', '<C-z>', "<nop>", default_opts)
