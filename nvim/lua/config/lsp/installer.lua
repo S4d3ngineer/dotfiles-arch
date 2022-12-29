@@ -25,10 +25,6 @@ function M.setup(servers, options)
           }
         end
 
-        -- For coq.nvim
-        -- local coq = require "coq"
-        -- server:setup(coq.lsp_ensure_capabilities(opts))
-
         -- For nvim-cmp
         server:setup(opts)
 
