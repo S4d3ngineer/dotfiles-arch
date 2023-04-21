@@ -1,5 +1,2 @@
--- It must be set before colorizer is sourced
-vim.opt.termguicolors = true
-
-require "utils"
-require("plugins").setup()
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
