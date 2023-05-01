@@ -4,3 +4,4 @@
 local opt = vim.opt
 
 opt.wrap = true
+opt.smartindent = false
