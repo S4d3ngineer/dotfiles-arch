@@ -1,16 +1,17 @@
 return {
   -- { "folke/tokyonight.nvim", lazy = true, opts = { lualine_bold = true } },
-  {
-    "catppuccin/nvim",
-    lazy = true,
-    name = "catppuccin",
-    opts = {
-      -- flavour = "macchiato",
-      integrations = {
-        leap = true,
-      },
-    },
-  },
+  -- {
+  --   "catppuccin/nvim",
+  --   lazy = true,
+  --   name = "catppuccin",
+  --   opts = {
+  --     -- flavour = "macchiato",
+  --     -- transparent_background = true,
+  --     integrations = {
+  --       leap = true,
+  --     },
+  --   },
+  -- },
   -- {
   --   -- this one is named onedark
   --   "olimorris/onedarkpro.nvim",
