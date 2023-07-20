@@ -1,5 +1,5 @@
 # BEGIN_KITTY_THEME
-# Tokyo Night
+# One Dark
 include current-theme.conf
 # END_KITTY_THEME
 
@@ -11,6 +11,6 @@ window_padding_width 3
 background_opacity 1.0
 
 # tabs settings
-tab_bar_style hidden
-tab_bar_min_tabs 99
+# tab_bar_style hidden
+# tab_bar_min_tabs 99
 map ctrl+shift+i select_tab
